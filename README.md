@@ -91,3 +91,27 @@ php artisan tinker
 User::factory()->count(5)->create();
 exit
 ```
+
+### Step 3. Construct Route
+
+Define 3 routes in **routes/web.php** that handle the import and export for Excel and CSV files.
+```bash
+<?php
+use Illuminate\Support\Facades\Route;
+use App\Http\Controllers\UserController;
+/*
+|--------------------------------------------------------------------------
+| Web Routes
+|--------------------------------------------------------------------------
+|
+| Here is where you can register web routes for your application. These
+| routes are loaded by the RouteServiceProvider within a group which
+| contains the "web" middleware group. Now create something great!
+|
+*/
+Route::get('file-import-export', [UserController::class, 'fileImportExport']);
+Route::post('file-import', [UserController::class, 'fileImport'])->name('file-import');
+Route::get('file-export', [UserController::class, 'fileExport'])->name('file-export');
+```
+
+### Step 4. Make Import Class
