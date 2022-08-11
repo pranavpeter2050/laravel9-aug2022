@@ -115,3 +115,10 @@ Route::get('file-export', [UserController::class, 'fileExport'])->name('file-exp
 ```
 
 ### Step 4. Make Import Class
+
+Ran the below command. 
+```bash
+php artisan make:import UsersImport --model=User
+```
+This created **app/Imports/UsersImport.php** file which is called inside the **UserController**. This **UserImport.php** file handles the excel import functionality.
+
