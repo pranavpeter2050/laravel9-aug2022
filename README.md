@@ -59,3 +59,23 @@ Use the `composer fund` command to find out more!
 ```
 ### Step 2. Register Plugin’s Service in Providers & Aliases
 
+Placed following code inside the **config/app.php** file.
+```
+'providers' => [
+  .......
+  .......
+  .......
+  Maatwebsite\Excel\ExcelServiceProvider::class,
+ 
+ ],  
+'aliases' => [ 
+  .......
+  .......
+  .......
+  'Excel' => Maatwebsite\Excel\Facades\Excel::class,
+], 
+```
+Executed below command, and generated a new config file as **config/excel.php**.
+```
+php artisan vendor:publish --provider="Maatwebsite\Excel\ExcelServiceProvider"
+```
