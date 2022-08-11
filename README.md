@@ -129,3 +129,11 @@ Ran the below command.
 php artisan make:export UsersExport --model=User
 ```
 This created **app/Exports/UsersExport.php** file which is called inside the **UserController**. This **UsersExport.php** file handles the excel import functionality.
+
+### Step 6. Make Controller
+
+Ran the below command to create a controller to define methods to handle import/export functions. 
+```bash
+php artisan make:controller UserController
+```
+Added functions to handle import/export in the UserController for User Table.
