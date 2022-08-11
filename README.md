@@ -79,3 +79,15 @@ Executed below command, and generated a new config file as **config/excel.php**.
 ```
 php artisan vendor:publish --provider="Maatwebsite\Excel\ExcelServiceProvider"
 ```
+
+### Step 2**. Generate Fake Records, Migrate Table
+
+```
+php artisan migrate
+```
+Once the migration is completed, then execute the command to generate the fake records.
+```
+php artisan tinker
+User::factory()->count(5)->create();
+exit
+```
