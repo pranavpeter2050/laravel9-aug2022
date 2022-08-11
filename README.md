@@ -122,3 +122,10 @@ php artisan make:import UsersImport --model=User
 ```
 This created **app/Imports/UsersImport.php** file which is called inside the **UserController**. This **UserImport.php** file handles the excel import functionality.
 
+### Step 5. Make Export Class
+
+Ran the below command. 
+```bash
+php artisan make:export UsersExport --model=User
+```
+This created **app/Exports/UsersExport.php** file which is called inside the **UserController**. This **UsersExport.php** file handles the excel import functionality.
